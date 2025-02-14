@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <style>
+        /* Estilos CSS usando variáveis para facilitar a manutenção */
+        :root {
+            --cor-primaria: #007bff; /* Azul */
+            --cor-secundaria: #6c757d; /* Cinza */
+            --cor-fundo: #f8f9fa; /* Cinza claro */
+            --cor-texto: #343a40; /* Preto */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 500px;
+            max-width: 90%;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--cor-primaria);
+        }
+
+        /* Estilizando os labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Estilizando os inputs e textarea */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Garante que padding não aumente o tamanho total */
+        }
+
+        textarea {
+            resize: vertical; /* Permite redimensionamento vertical */
+        }
+
+        /* Estilizando o botão de envio */
+        button {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+        }
+
+        button:hover {
+            background-color: darken(var(--cor-primaria), 10%); /* Escurece a cor no hover */
+        }
+
+        /* Estilos para dispositivos menores (responsividade) */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Entre em Contato</h1>
+        <!-- Definição do formulário. O atributo "action" define para onde os dados serão enviados. -->
+        <!-- O atributo "method" define o método HTTP usado para enviar os dados (POST é mais seguro para dados sensíveis). -->
+        <form action="#" method="post">
+            
+            <!-- Label e input para o nome -->
+            <label for="nome">Nome:</label>
+            <!-- Input do tipo "text" para o nome. O atributo "id" associa o label a este input. -->
+            <!-- O atributo "name" é usado para identificar este campo no servidor. -->
+            <!-- O atributo "required" faz com que este campo seja obrigatório. -->
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+            
+            <!-- Label e input para o email -->
+            <label for="email">Email:</label>
+            <!-- Input do tipo "email" para garantir que o valor digitado seja um email válido. -->
+            <input type="email" id="email" name="email" required placeholder="Digite seu email">
+            
+            <!-- Label e textarea para a mensagem -->
+            <label for="mensagem">Mensagem:</label>
+            <!-- Textarea para a mensagem. O atributo "rows" define o número de linhas visíveis. -->
+            <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Digite sua mensagem"></textarea>
+            
+            <!-- Botão de envio -->
+            <!-- Botão do tipo "submit" para enviar o formulário. -->
+            <button type="submit">Enviar Mensagem</button>
+            
+        </form>
+    </div>
+    
+</body>
+</html>
